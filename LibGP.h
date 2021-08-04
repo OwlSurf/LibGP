@@ -18,11 +18,12 @@
 extern "C" {
 #endif
 
-#include "Fonts/Fonts.h"
-#include "stdarg.h"
-#include "stdbool.h"
-#include "stdint.h"
-#include "stdlib.h"
+#include "Fonts/LibGPFonts.h"
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  *	\brief Macro converts RGB data to RGB 565 format and save it in uint16_t.

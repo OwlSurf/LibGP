@@ -3,7 +3,7 @@
 *	\brief	Auto generated file.
 *
 */
-#include "NTC_Fonts.h"
+#include "LibGPFonts.h"
 
 /* Character bitmaps for Times New Roman 16pt */
 const uint8_t timesNewRoman_16ptBitmaps[] = 

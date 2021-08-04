@@ -710,7 +710,7 @@ void GP_PutString(uint16_t x,
     } else {
       Ch -= 32;
     }
-    PutChar(x, y, color, Ch, f, Buffer, w, h, cbc);
+   GP_PutChar(x, y, color, Ch, f, Buffer, w, h, cbc);
     x += f->FontChar[Ch].width + 2;
     String++;
   }
@@ -757,7 +757,7 @@ void GP_PutStringInTheCenter(uint16_t x,
       Ch -= 96;
     else
       Ch -= 32;
-    PutChar(xx, yy, color, Ch, f, Buffer, w, h, cbc);
+    GP_PutChar(xx, yy, color, Ch, f, Buffer, w, h, cbc);
     xx += f->FontChar[Ch].width + 2;
     StrPtr++;
   } while (*StrPtr != '\0');

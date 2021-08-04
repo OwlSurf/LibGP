@@ -7,6 +7,7 @@
 #ifndef LIB_GP_FONTS_H
 #define LIB_GP_FONTS_H
 
+#include <stdint.h>
 
 /**
 *	\brief	Character descriptor struct.
