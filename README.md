@@ -6,6 +6,6 @@ This graphics library will allows to draw a simple graphics primitives (dots, li
 ## Build status: 
 [![CMake](https://github.com/RomanGaranin/LibGP/actions/workflows/cmake.yml/badge.svg)](https://github.com/RomanGaranin/LibGP/actions/workflows/cmake.yml)
 
+## Terms and definitions:
 ## Contents:
-
 ## How to use:
