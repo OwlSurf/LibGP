@@ -2,8 +2,12 @@ name: CMake
 
 on:
   push:
+    paths-ignore:
+      - 'README.md'
     branches: [ main ]
   pull_request:
+    paths-ignore:
+      - 'README.md'
     branches: [ main ]
 
 env:
