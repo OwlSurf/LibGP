@@ -3,6 +3,8 @@
  *	\brief        Graphics primitives library implementation.
  *	\author       Roman Garanin
  * 	\mail         r_o.m.a_n@mail.ru
+ *
+ *
  */
 
 #include "LibGP.h"
