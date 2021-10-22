@@ -32,37 +32,37 @@ extern "C" {
  * 	\param B - Blue color.
  *	\return - no.
  */
-#define RGB565(R, G, B) (uint16_t)((((uint16_t)R & 0xF8) << 8) |	\
+#define GP_RGB565(R, G, B) (uint16_t)((((uint16_t)R & 0xF8) << 8) |	\
                                    (((uint16_t)G & 0xFC) << 3) |	\
                                             ((uint16_t)B >> 3))
 
 /**
- *	\brief  Colors.
+ *	\brief  GP Colors.
  */
-#define WHITE RGB565(255, 255, 255)         /**< White */
-#define BLACK RGB565(0, 0, 0)               /**< Black*/
-#define DARK_GRAY RGB565(15, 15, 15)        /**< Dark gray */
-#define YELLOW RGB565(255, 255, 0)          /**< Yellow */
-#define RED RGB565(255, 0, 0)               /**< Red */
-#define GREEN RGB565(60, 255, 0)            /**< Green */
-#define LIGHT_BLUE RGB565(161, 162, 172)    /**< Light blue*/
-#define LIGHT_GREY RGB565(170, 170, 170)    /**< Light gray*/
-#define ORANGE RGB565(255, 215, 0)          /**< Orange*/
-#define GRAY RGB565(102, 102, 102)          /**< Gray */
-#define BLUE RGB565(29, 21, 255)            /**< Blue */
+#define GP_WHITE RGB565(255, 255, 255)         /**< White */
+#define GP_BLACK RGB565(0, 0, 0)               /**< Black*/
+#define GP_DARK_GRAY RGB565(15, 15, 15)        /**< Dark gray */
+#define GP_YELLOW RGB565(255, 255, 0)          /**< Yellow */
+#define GP_RED RGB565(255, 0, 0)               /**< Red */
+#define GP_GREEN RGB565(60, 255, 0)            /**< Green */
+#define GP_LIGHT_BLUE RGB565(161, 162, 172)    /**< Light blue*/
+#define GP_LIGHT_GREY RGB565(170, 170, 170)    /**< Light gray*/
+#define GP_ORANGE RGB565(255, 215, 0)          /**< Orange*/
+#define GP_GRAY RGB565(102, 102, 102)          /**< Gray */
+#define GP_BLUE RGB565(29, 21, 255)            /**< Blue */
 
 /**
  *	\brief Function clears video buffer.
  *	\param Buffer - A pointer to video buffer to clear.
  *	\param w - Width of screen.
  *	\param h - high of screen.
- *	\return - no.
+ *	\return no.
  */
 void GP_ClearBuffer(uint16_t *Buffer, uint16_t w, uint16_t h);
 
 /**
  *	\brief Function rotates an image in video buffer.
- * 	\return - no.
+ * 	\return no.
  */
 void GP_RotateScreen();
 
@@ -85,11 +85,11 @@ void GP_FILL(uint16_t x1,
 
 /**
  *	\brief function draws a horizontal line .
- *	\params - x, y - a coordinates of start of the horizontal line.
- *	\param  - lenght of the horizontal line.
- *	\param - color - color of the horizontal line.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
+ *	\params x, y - a coordinates of start of the horizontal line.
+ *	\param lenght of the horizontal line.
+ *	\param color - color of the horizontal line.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
  *	\return - no.
  */
 void GP_SetLineH(uint16_t x,
@@ -102,12 +102,12 @@ void GP_SetLineH(uint16_t x,
 
 /**
  *	\brief function draws a vertical line.
- *	\param - x, y - a coordinates of start of the vertical line.
- *	\param - lenght of the vertical line.
- *	\param - color - color of the vertical line.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x, y - a coordinates of start of the vertical line.
+ *	\param lenght of the vertical line.
+ *	\param color - color of the vertical line.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetLineV(uint16_t x,
                  uint16_t y,
@@ -119,12 +119,12 @@ void GP_SetLineV(uint16_t x,
 
 /**
  *	\brief function draws a simple cross .
- *	\param - x, y - a coordinates of the cross.
- *	\param - width - width of the cross.
- *	\param - color - color of the cross.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x, y - a coordinates of the cross.
+ *	\param width - width of the cross.
+ *	\param color - color of the cross.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetCross(uint16_t x,
                  uint16_t y,
@@ -135,14 +135,14 @@ void GP_SetCross(uint16_t x,
                  uint32_t h);
 
 /**
- *	\brief - function draws a square.
- *	\param - x, y - a coordinates of center of the Square.
- *	\param - width - width of the square.
- * 	\param - height - height of the square.
- *	\param - color - color of the square.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\brief function draws a square.
+ *	\param x, y - a coordinates of center of the Square.
+ *	\param width - width of the square.
+ * 	\param height - height of the square.
+ *	\param color - color of the square.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetSquare(uint16_t x,
                   uint16_t y,
@@ -154,15 +154,15 @@ void GP_SetSquare(uint16_t x,
                   uint32_t h);
 
 /**
- *	\brief - function draws a dotted horizontal line.
- *	\param - x, y - a coordinates of start of the dotted horiszontal line.
- *	\param - length - length of the dotted horizontal line.
- * 	\param - dot_length - lenght of dotts.
- * 	\param - space_length - length of space between dotts.
- *	\param - color - color of the horizontal dotted line.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\brief function draws a dotted horizontal line.
+ *	\param x, y - a coordinates of start of the dotted horiszontal line.
+ *	\param length - length of the dotted horizontal line.
+ * 	\param dot_length - lenght of dotts.
+ * 	\param space_length - length of space between dotts.
+ *	\param color - color of the horizontal dotted line.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetLineDottedH(uint16_t x,
                        uint16_t y,
@@ -175,15 +175,15 @@ void GP_SetLineDottedH(uint16_t x,
                        uint32_t h);
 
 /**
- *	\brief - function draws a dotted vertical line.
- *	\param - x, y - a coordinates of start of the dotted vertical line.
- *	\param - length - length of the dotted vertical line.
- * 	\param - dot_length - lenght of the dotts.
- * 	\param - space_length - length of space between dotts.
- *	\param - color - color of the dotted vertical line.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\brief function draws a dotted vertical line.
+ *	\param x, y - a coordinates of start of the dotted vertical line.
+ *	\param length - length of the dotted vertical line.
+ * 	\param dot_length - lenght of the dotts.
+ * 	\param space_length - length of space between dotts.
+ *	\param color - color of the dotted vertical line.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetLineDotedV(uint16_t x,
                       uint16_t y,
@@ -197,11 +197,11 @@ void GP_SetLineDotedV(uint16_t x,
 
 /**
  *	\brief function draws a Bresenham line.
- *	\param  - x1, y1, x2, y2 - a coordinates of the Bresenham line.
- *	\param - color - color of the Bresenham line.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x1, y1, x2, y2 - a coordinates of the Bresenham line.
+ *	\param color - color of the Bresenham line.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetBresenhamLine(uint16_t x1,
                          uint16_t y1,
@@ -214,12 +214,12 @@ void GP_SetBresenhamLine(uint16_t x1,
 
 /**
  *	\brief function draws Bresenham circle.
- *	\param - x0, y0 - a coordinates of center of the Bresenham circle.
- *	\param - r - radius of the Bresenham circle.
- *	\param - color - color of the Bresenham circle.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x0, y0 - a coordinates of center of the Bresenham circle.
+ *	\param r - radius of the Bresenham circle.
+ *	\param color - color of the Bresenham circle.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetBresenhamCircle(uint16_t x0,
                            uint16_t y0,
@@ -231,13 +231,13 @@ void GP_SetBresenhamCircle(uint16_t x0,
 
 /**
  *	\brief function draws a rouned rectangular.
- *	\param - x0, y0 - a coordinates of the rounded rectangular.
- *	\param - width and heigth - witdth and heigth of the rounded rectangular.
- * 	\param - r - rounding radius of the rectangular.
- *	\param - color - color of the rounded rectangular.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x0, y0 - a coordinates of the rounded rectangular.
+ *	\param width and heigth - witdth and heigth of the rounded rectangular.
+ * 	\param r - rounding radius of the rectangular.
+ *	\param color - color of the rounded rectangular.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_RoundedRect(uint16_t x0,
                     uint16_t y0,
@@ -251,12 +251,12 @@ void GP_RoundedRect(uint16_t x0,
 
 /**
  *	\brief function draws a filled Bresenham circle.
- *	\param - x0, y0 - a coordinates of the Bresenham filled circle.
- *	\param - r - radius of the Bresenham filled circle.
- *	\param - color - color of the Bresenham filled circle.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x0, y0 - a coordinates of the Bresenham filled circle.
+ *	\param r - radius of the Bresenham filled circle.
+ *	\param color - color of the Bresenham filled circle.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_DrawFilledCircle(int16_t x0,
                          int16_t y0,
@@ -268,13 +268,13 @@ void GP_DrawFilledCircle(int16_t x0,
 
 /**
  *	\brief function draws rounded fill.
- *	\param - x0, y0 - a coordinates of the rounded fill.
- *	\param - width and heigth - witdth and heigth of the rounded fill.
- * 	\param - r - radius of roundings of the rounded fill.
- *	\param - color - color of the rounded fill.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\param x0, y0 - a coordinates of the rounded fill.
+ *	\param width and heigth - witdth and heigth of the rounded fill.
+ * 	\param r - radius of roundings of the rounded fill.
+ *	\param color - color of the rounded fill.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_DrawRoundedFill(int16_t x0,
                         int16_t y0,
@@ -287,14 +287,14 @@ void GP_DrawRoundedFill(int16_t x0,
                         uint32_t h);
 
 /**
- *	\brief - function drwaws arc. (not implemented)
- *	\param - x0, y0 - a coordinates of arc.
- *	\param - a1, a2 - start and end angle of arc.
- * 	\param - r - radius of arc.
- *	\param - color - color of square.
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\brief function drwaws arc. (not implemented)
+ *	\param x0, y0 - a coordinates of arc.
+ *	\param a1, a2 - start and end angle of arc.
+ * 	\param r - radius of arc.
+ *	\param color - color of square.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_SetArc(uint16_t x,
                uint16_t y,
@@ -306,46 +306,49 @@ void GP_SetArc(uint16_t x,
                uint32_t w,
                uint32_t h);
 
-#define NORTH 1
-#define SOUTH 2
-#define WEST 3
-#define EAST 4
+#define GP_NORTH 1
+#define GP_SOUTH 2
+#define GP_WEST 3
+#define GP_EAST 4
 
-#define ARROW_NORTH 5
-#define ARROW_SOUTH 6
-#define ARROW_WEST 7
-#define ARROW_EAST 8
+#define GP_ARROW_NORTH 5
+#define GP_ARROW_SOUTH 6
+#define GP_ARROW_WEST 7
+#define GP_ARROW_EAST 8
 
-#define TRIANGLE_NORTH 9
-#define TRIANGLE_SOUTH 10
-#define TRIANGLE_WEST 11
-#define TRIANGLE_EAST 12
+#define GP_TRIANGLE_NORTH 9
+#define GP_TRIANGLE_SOUTH 10
+#define GP_TRIANGLE_WEST 11
+#define GP_TRIANGLE_EAST 12
 
 /**
- *	\brief  - function draws a simple triangle.
- *	\param  - .
- *	\param  - .
- *	\param  - .
+ *	\brief function draws a simple triangle.
+ *	\param x, y coordinates of center of the triangle.
+ *	\param heigth, width - external size of the triangle.
+ *  \param side - direction of the triangle.
+ *	\param color - color of the arrow.
+ *  \param *Buffer - a pointer to a video buffer.
+ *  \param w, h width and height of the video buffer.
  *	\return - no.
  */
 void GP_PutTriangle(uint16_t x,
-    uint16_t y,
-    uint16_t width,
-    uint16_t heigth,
-    uint8_t side,
-    uint16_t color,
-    uint16_t *Buffer,
-    uint32_t w,
-    uint32_t h);
+                    uint16_t y,
+                    uint16_t width,
+                    uint16_t heigth,
+                    uint8_t side,
+                    uint16_t color,
+                    uint16_t *Buffer,
+                    uint32_t w,
+                    uint32_t h);
 
 /**
- *	\brief - function draws a simple arrow.
- *	\param  - .
- *	\param  - .
- *	\param - color - color of .
- *	\param - *Buffer - a pointer to a video buffer.
- *	\params - w, h width and height of the video buffer.
- *	\return - no.
+ *	\brief function draws a simple arrow.
+ *	\param x, y coordinates of center of the arrow.
+ *	\param heigth, width - external size of the arrow.
+ *	\param color - color of the arrow.
+ *	\param *Buffer - a pointer to a video buffer.
+ *	\params w, h width and height of the video buffer.
+ *	\return no.
  */
 void GP_PutArrow(uint16_t x,
                  uint16_t y,
@@ -358,11 +361,14 @@ void GP_PutArrow(uint16_t x,
                  uint32_t h);
 
 /**
- *	\brief function.
- *	\param  - .
- *	\param  - .
- *	\param  - .
+ *	\brief a flood fill function. Fills an area bounded by closed lines.
+ *	\param x, y - coordinates of center a center of filling area.
+ *	\param heigth, width - maximum rectangular size of the filling area. It should be greater than area bounded by closed lines.
+ *	\param border_color - a color of the closed lines (border) that bounds the area.
+ *  \param *Buffer - a pointer to a video buffer.
+ *  \param w, h - width and height of the video buffer
  *	\return - no.
+ *  \status not works well yet.!
  */
 void GP_FillArea(uint16_t x,
                  uint16_t y,
@@ -376,20 +382,20 @@ void GP_FillArea(uint16_t x,
 
 /**
  *	\brief function.
- *	\param  - .
- *	\param  - .
- *	\param  - .
- *	\return - no.
+ *	\param x, y - coordinates of left-up corner a center of the char
+ *	\param color - color of char.
+ *	\param Ch - .
+ *	\return no.
  */
 void GP_PutChar(uint16_t x,
-    uint16_t y,
-    uint16_t color,
-    const uint8_t Ch,
-    const FONT *f,
-    uint16_t *Buffer,
-    uint32_t w,
-    uint32_t h,
-    unsigned cbc);
+                uint16_t y,
+                uint16_t color,
+                const uint8_t Ch,
+                const FONT *f,
+                uint16_t *Buffer,
+                uint32_t w,
+                uint32_t h,
+                unsigned cbc);
 
 /**
  *	\brief - function prints a string.
@@ -427,8 +433,7 @@ void GP_PutStringInTheCenter(uint16_t x,
 
 /**
  *	\brief function draws a bitmaps.
- *	\param  - .
- *	\param  - .
+ *	\param  - x, y - coordinates of center of the bitmap.
  *	\param - color - color of .
  *	\param - *Buffer - a pointer to a video buffer.
  *	\params - w, h width and height of the video buffer.
